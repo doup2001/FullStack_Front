@@ -1,9 +1,8 @@
 import React from 'react';
+import BasicLayout from '../layouts/Basic Layout';
 
 function AboutPage(props) {
-  return (
-    <div className={'text-3xl'}>AboutPage</div>
-  );
+  return <BasicLayout>AboutPage</BasicLayout>;
 }
 
 export default AboutPage;
