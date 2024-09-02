@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import BasicLayout from '../../layouts/Basic Layout';
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 function IndexPage(props) {
+  const navigate = useNavigate();
+
+  const handleClickList = useCallback(() => {
+    navigate({ pathname: 'list' });
+  }, []);
+
+  const handleClickAdd = useCallback(() => {
+    navigate({ pathname: 'add' });
+  }, []);
+
   return (
     <BasicLayout>
-      <div>
-        <Link to={'/todo/list'}>List</Link>
-        <div>ADD</div>
+      <div className='underline' onClick={handleClickList}>
+        List
+      </div>
+      <div className='underline' onClick={handleClickAdd}>
+        ADD
       </div>
       <div>
         <Outlet />
