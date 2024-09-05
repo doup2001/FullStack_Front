@@ -29,6 +29,7 @@ function ReadPage() {
     navigate({ pathname: `/todo/list`, search: queryStr });
   }, [page, size]);
 
+
   return (
     <div>
       <div className={'text-3xl'}> Todo Read Page{tno} </div>
