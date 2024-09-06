@@ -2,23 +2,35 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import BasicMenu from '../components/menus/BasicMenu';
 
-function BasicLayout({ children }) {
+const BasicLayout = ({ children }) => {
   return (
     <>
-      <BasicMenu></BasicMenu>
+      {/* 기존 헤더 대신 BasicMenu*/}
+      <BasicMenu />
 
-      <div className='bg-teal-400 p-5 w-full flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0 '>
-        <main className='max-w-7xl mx-auto sm:px-6 lg:px-8 flex'>
-          <h1>{children}</h1>
+      {/* 상단 여백 my-5 제거 */}
+      <div className='bg-white my-5 w-full flex flex-col space-y-1 md:flex-row md:space-x-1 md:space-y-0'>
+        <aside className='bg-green-300 md:w-1/5 lg:w-1/4 px-5 flex py-5'>
+          {' '}
+          {/* 상단 여백 py-40 제거 flex 제거 */}
+          <h1 className='text-2xl md:text-4xl'>Sidebar</h1>
+        </aside>
+
+        <main className='bg-indigo-300 md:w-4/5 lg:w-3/4 px-5 py-5'>
+          {' '}
+          {/* 상단 여백 py-40 변경 flex 제거 */}
+          {children}
         </main>
 
-        <aside className='bg-green-500 w-1/3 p-4'>
+        <aside className='bg-green-300 md:w-1/5 lg:w-1/4 px-5 flex py-5'>
+          {' '}
+          {/* 상단 여백 py-40 제거 flex 제거 */}
           <h1 className='text-2xl md:text-4xl'>Sidebar</h1>
         </aside>
       </div>
     </>
   );
-}
+};
 
 BasicLayout.propTypes = {
   children: PropTypes.node.isRequired,

@@ -1,11 +1,10 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
-function BasicMenu(props) {
+const BasicMenu = () => {
   return (
-    <nav id='navbar' className='flex bg-black'>
-      <div className='w-4/5 bg-gray-700'>
-        <ul className='w-4/5 text-white font-bold'>
+    <nav id='navbar' className=' flex  bg-blue-300'>
+      <div className='w-4/5 bg-gray-500'>
+        <ul className='flex p-4 text-white font-bold'>
           <li className='pr-6 text-2xl'>
             <Link to={'/'}>Main</Link>
           </li>
@@ -17,11 +16,12 @@ function BasicMenu(props) {
           </li>
         </ul>
       </div>
-      <div className='w-4/5 flex justify-end bg-red-200 p-4 font-medium'>
-        <div className='text-black m-1 rounded'>Login</div>
+
+      <div className='w-1/5 flex justify-end bg-orange-300 p-4 font-medium'>
+        <div className='text-white text-sm m-1 rounded'>Login</div>
       </div>
     </nav>
   );
-}
+};
 
 export default BasicMenu;
